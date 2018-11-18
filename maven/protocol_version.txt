@@ -1,0 +1,35 @@
+(https://repo.maven.apache.org/maven2): Received fatal alert: protocol_version -> [Help 1]
+
+
+maven联通网络下中央仓库不能访问的解决办法
+
+https://blog.csdn.net/shycx/article/details/7726600
+
+ <mirrors>
+    <!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+    -->
+     <mirror> 
+           <id>ibiblio.org</id> 
+           <name>ibiblio Mirror of http://repo1.maven.org/maven2/</name> 
+           <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url> 
+           <mirrorOf>central</mirrorOf> 
+           <!-- United States, North Carolina --> 
+     </mirror>
+     <mirror>  
+         <id>jboss-public-repository-group</id>  
+         <mirrorOf>central</mirrorOf>  
+         <name>JBoss Public Repository Group</name>  
+         <url>http://repository.jboss.org/nexus/content/groups/public</url>  
+     </mirror>  
+        
+  </mirrors>
